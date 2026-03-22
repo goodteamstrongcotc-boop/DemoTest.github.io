@@ -5,88 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Restaurant</title>
 <style>
-/* 🍽️ 配色趨勢：溫暖大地系 */
+/* 🌿 整體配色: 大地色系 + 高端咖啡廳 */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4efe6; /* 溫和米膚背景 */
-  color: #3e3a36;      /* 深色主文字 */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f4efe6; /* 溫暖米膚色 */
+  color: #3e3a36; /* 柔和深色文字 */
 }
 
 /* Header */
 header {
   text-align: center;
-  padding: 50px 20px;
-  background: #c06b34; /* 溫暖橙棕主色 */
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #c06b34, #8a6e4f); /* 溫暖橙棕 + 深奶咖漸層 */
   color: #fff;
 }
 header h1 {
-  font-size: 42px;
+  font-size: 48px;
   margin: 0;
+  letter-spacing: 1px;
 }
 header p {
-  opacity: 0.9;
   margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.9;
 }
 header .btn {
-  background: #a3835f; /* 深奶咖按鈕 */
-  margin: 8px;
-  color: #fff;
+  margin: 10px 5px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  display: inline-block;
 }
+
+/* 按鈕顏色 */
+.btn.call { background: #a3835f; color: #fff; }
+.btn.telegram { background: #0088cc; color: #fff; }
 
 /* Section */
 section {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
-/* 卡片 */
+/* Menu Cards */
 .menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
 }
 .card {
   background: #ffffff;
   border-radius: 16px;
   padding: 20px;
   width: 240px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 .card img {
   width: 100%;
   border-radius: 12px;
 }
 
-/* 按鈕 */
-.btn {
-  padding: 14px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
-
-/* 電話按鈕 */
-.btn.call {
-  background: #8a6e4f;
-  color: #fff;
-}
-
-/* Telegram 按鈕 */
-.btn.telegram {
-  background: #0088cc;
-  color: #fff;
-}
-
-/* Map + CTA 容器 */
+/* Map + Telegram 容器 */
 .map-telegram {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 @media(min-width: 700px) {
   .map-telegram {
@@ -95,9 +88,10 @@ section {
   }
 }
 .map {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 12px;
+  border:0;
 }
 
 /* Footer */
@@ -113,7 +107,7 @@ footer {
 
 <header>
   <h1>Your Restaurant</h1>
-  <p>Delicious Dining Experience in Phnom Penh</p>
+  <p>精緻現代高端咖啡廳 | Premium Cafe Experience</p>
   <a href="tel:+85512345678" class="btn call">📞 Call Now</a>
   <a href="https://t.me/yourusername" class="btn telegram">💬 Telegram</a>
 </header>
@@ -122,17 +116,17 @@ footer {
   <h2>Our Menu</h2>
   <div class="menu">
     <div class="card">
-      <img src="images/steak.jpg" alt="Steak">
+      <img src="images/steak.jpg" alt="Grilled Steak">
       <h3>Grilled Steak</h3>
       <p>$12.99</p>
     </div>
     <div class="card">
-      <img src="images/pasta.jpg" alt="Pasta">
+      <img src="images/pasta.jpg" alt="Seafood Pasta">
       <h3>Seafood Pasta</h3>
       <p>$9.99</p>
     </div>
     <div class="card">
-      <img src="images/coffee.jpg" alt="Coffee">
+      <img src="images/coffee.jpg" alt="Signature Coffee">
       <h3>Signature Coffee</h3>
       <p>$3.50</p>
     </div>
@@ -142,11 +136,13 @@ footer {
 <section>
   <h2>Visit Us</h2>
   <p>Street 123, Phnom Penh</p>
+  <p>Open Daily: 8AM - 10PM</p>
 
   <div class="map-telegram">
     <iframe 
-      src="https://www.google.com/maps/embed?..."
-      class="map"
+      src="https://www.google.com/maps/embed?..." 
+      class="map" 
+      allowfullscreen="" 
       loading="lazy"></iframe>
 
     <a href="https://t.me/yourusername" class="btn telegram">💬 Telegram</a>
@@ -154,5 +150,6 @@ footer {
 </section>
 
 <footer>© 2026 Your Restaurant | All Rights Reserved</footer>
+
 </body>
 </html>
