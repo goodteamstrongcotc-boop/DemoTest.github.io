@@ -4,52 +4,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Restaurant</title>
+
+<!-- 高端字體 -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora&display=swap" rel="stylesheet">
+
 <style>
-/* 🌿 整體配色: 大地色系 + 高端咖啡廳 */
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #f4efe6; /* 溫暖米膚色 */
-  color: #3e3a36; /* 深色文字 */
+  font-family: 'Lora', serif;
+  background: #f4efe6;
+  color: #3e3a36;
 }
 
-/* Header */
-header {
+/* 🔥 Banner（高端關鍵） */
+.hero {
+  height: 90vh;
+  background: url('images/restaurant.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #c06b34, #8a6e4f); /* 溫暖橙棕 + 深奶咖漸層 */
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+}
+.hero-content {
+  position: relative;
   color: #fff;
 }
-header h1 {
-  font-size: 48px;
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
   margin: 0;
-  letter-spacing: 1px;
 }
-header p {
+.hero p {
+  font-size: 20px;
   margin-top: 10px;
-  font-size: 18px;
-  opacity: 0.9;
 }
-header .btn {
-  margin: 10px 5px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  padding: 14px 28px;
-  display: inline-block;
-}
-
-/* 按鈕顏色 */
-.btn.call { background: #a3835f; color: #fff; }
-.btn.telegram { background: #0088cc; color: #fff; }
 
 /* Section */
 section {
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin-bottom: 30px;
 }
 
-/* Menu Cards */
+/* Menu */
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -57,28 +73,25 @@ section {
   gap: 24px;
 }
 .card {
-  background: #ffffff;
+  background: #fff;
   border-radius: 16px;
   padding: 20px;
   width: 240px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
 }
 .card img {
   width: 100%;
   border-radius: 12px;
 }
-
-/* Map + 按鈕容器 */
-.map-telegram {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.card h3 {
+  font-family: 'Playfair Display', serif;
 }
+
+/* Map */
 .map {
   width: 320px;
   height: 320px;
@@ -86,77 +99,117 @@ section {
   border:0;
 }
 
-/* 按鈕並排容器 */
+/* 按鈕 */
 .button-row {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
 }
-.button-row .btn {
-  min-width: 140px;
+.btn {
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
+.btn.call { background: #a3835f; color: #fff; }
+.btn.telegram { background: #0088cc; color: #fff; }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 30px;
   font-size: 14px;
-  opacity: 0.85;
+}
+
+/* 手機優化 */
+@media(max-width:600px){
+  .hero h1 {font-size:40px;}
+  .map {width:260px; height:260px;}
 }
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Your Restaurant</h1>
-  <p>精緻現代高端咖啡廳 | Premium Cafe Experience</p>
-</header>
+<!-- 🔥 Hero -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Your Restaurant</h1>
+    <p>Modern Premium Café Experience</p>
+  </div>
+</div>
 
+<!-- Menu -->
 <section>
   <h2>Our Menu</h2>
   <div class="menu">
+
     <div class="card">
-      <img src="images/steak.jpg" alt="Grilled Steak">
+      <img src="images/steak.jpg">
       <h3>Grilled Steak</h3>
       <p>$12.99</p>
     </div>
+
     <div class="card">
-      <img src="images/pasta.jpg" alt="Seafood Pasta">
+      <img src="images/pasta.jpg">
       <h3>Seafood Pasta</h3>
       <p>$9.99</p>
     </div>
+
     <div class="card">
-      <img src="images/coffee.jpg" alt="Signature Coffee">
+      <img src="images/coffee.jpg">
       <h3>Signature Coffee</h3>
       <p>$3.50</p>
     </div>
+
+    <div class="card">
+      <img src="images/risotto.jpg">
+      <h3>Truffle Risotto</h3>
+      <p>$14.50</p>
+    </div>
+
+    <div class="card">
+      <img src="images/matcha.jpg">
+      <h3>Matcha Latte</h3>
+      <p>$4.80</p>
+    </div>
+
+    <div class="card">
+      <img src="images/cake.jpg">
+      <h3>Chocolate Lava Cake</h3>
+      <p>$5.90</p>
+    </div>
+
   </div>
 </section>
 
+<!-- Visit -->
 <section>
   <h2>Visit Us</h2>
   <p>Street 123, Phnom Penh</p>
   <p>Open Daily: 8AM - 10PM</p>
 
-  <!-- 地圖 -->
-  <div class="map-telegram">
-    <iframe 
-      src="https://www.google.com/maps/embed?..." 
-      class="map" 
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
-  </div>
+  <iframe src="https://www.google.com/maps/embed?..." class="map"></iframe>
 
-  <!-- 並排按鈕 -->
   <div class="button-row">
     <a href="tel:+85512345678" class="btn call">📞 Call Now</a>
     <a href="https://t.me/yourusername" class="btn telegram">💬 Telegram</a>
   </div>
 </section>
 
-<footer>© 2026 Your Restaurant | All Rights Reserved</footer>
+<footer>© 2026 Your Restaurant</footer>
+
+<script>
+window.addEventListener("scroll", function() {
+  document.querySelectorAll("section").forEach(function(sec) {
+    var top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
