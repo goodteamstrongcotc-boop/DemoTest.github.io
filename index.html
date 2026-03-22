@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #f4efe6; /* 溫暖米膚色 */
-  color: #3e3a36; /* 柔和深色文字 */
+  color: #3e3a36; /* 深色文字 */
 }
 
 /* Header */
@@ -73,25 +73,28 @@ section {
   border-radius: 12px;
 }
 
-/* Map + Telegram 容器 */
+/* Map + 按鈕容器 */
 .map-telegram {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-top: 30px;
-}
-@media(min-width: 700px) {
-  .map-telegram {
-    flex-direction: row;
-    justify-content: center;
-  }
+  justify-content: center;
+  margin-top: 20px;
 }
 .map {
   width: 320px;
   height: 320px;
   border-radius: 12px;
   border:0;
+}
+
+/* 按鈕並排容器 */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.button-row .btn {
+  min-width: 140px;
 }
 
 /* Footer */
@@ -108,8 +111,6 @@ footer {
 <header>
   <h1>Your Restaurant</h1>
   <p>精緻現代高端咖啡廳 | Premium Cafe Experience</p>
-  <a href="tel:+85512345678" class="btn call">📞 Call Now</a>
-  <a href="https://t.me/yourusername" class="btn telegram">💬 Telegram</a>
 </header>
 
 <section>
@@ -138,13 +139,19 @@ footer {
   <p>Street 123, Phnom Penh</p>
   <p>Open Daily: 8AM - 10PM</p>
 
+  <!-- 地圖 -->
   <div class="map-telegram">
     <iframe 
       src="https://www.google.com/maps/embed?..." 
       class="map" 
       allowfullscreen="" 
-      loading="lazy"></iframe>
+      loading="lazy">
+    </iframe>
+  </div>
 
+  <!-- 並排按鈕 -->
+  <div class="button-row">
+    <a href="tel:+85512345678" class="btn call">📞 Call Now</a>
     <a href="https://t.me/yourusername" class="btn telegram">💬 Telegram</a>
   </div>
 </section>
