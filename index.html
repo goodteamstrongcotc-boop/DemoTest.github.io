@@ -3,174 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camspine Record</title>
+<title>Your Restaurant</title>
 <style>
+/* 🍽️ 配色趨勢：溫暖大地系 */
 body {
-  background: linear-gradient(to bottom, #f5f1e8, #eae3d5);
+  margin: 0;
   font-family: Arial, sans-serif;
-  margin:0;
-  padding:0;
+  background: #f4efe6; /* 溫和米膚背景 */
+  color: #3e3a36;      /* 深色主文字 */
 }
 
 /* Header */
 header {
-  padding: 60px 20px;
   text-align: center;
-  background: linear-gradient(180deg,#000,#111);
+  padding: 50px 20px;
+  background: #c06b34; /* 溫暖橙棕主色 */
+  color: #fff;
 }
 header h1 {
-  margin:0;
-  font-size:42px;
-  color:#f5c542;
+  font-size: 42px;
+  margin: 0;
 }
 header p {
-  opacity:0.8;
-  margin-bottom:20px;
+  opacity: 0.9;
+  margin-top: 10px;
 }
 header .btn {
-  margin:5px;
+  background: #a3835f; /* 深奶咖按鈕 */
+  margin: 8px;
+  color: #fff;
 }
 
 /* Section */
 section {
-  padding:60px 20px;
-  text-align:center;
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.8s ease;
-}
-section.show {
-  opacity:1;
-  transform:translateY(0);
+  padding: 50px 20px;
+  text-align: center;
 }
 
-/* Menu Cards */
+/* 卡片 */
 .menu {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 .card {
-  background:#ffffff; /* 改成白色卡片 */
-  padding:20px;
-  border-radius:16px;
-  width:220px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 .card img {
-  width:100%;
-  border-radius:10px;
+  width: 100%;
+  border-radius: 12px;
 }
 
-/* Buttons */
-button, .btn {
-  padding:15px 25px;
-  background:#f5c542;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:bold;
-  margin:10px;
-  display:inline-block;
-  text-decoration:none;
-  color:#000;
-}
-.btn-telegram {
-  background:#0088cc;
-  color:#fff;
+/* 按鈕 */
+.btn {
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
 }
 
-/* Map + Telegram Container */
+/* 電話按鈕 */
+.btn.call {
+  background: #8a6e4f;
+  color: #fff;
+}
+
+/* Telegram 按鈕 */
+.btn.telegram {
+  background: #0088cc;
+  color: #fff;
+}
+
+/* Map + CTA 容器 */
 .map-telegram {
-  display:flex;
-  flex-direction: column; /* 先垂直排 */
-  align-items:center;
-  gap:20px;
-  margin-top:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
-@media(min-width:700px){
+@media(min-width: 700px) {
   .map-telegram {
-    flex-direction: row; /* 大螢幕橫排 */
-    justify-content:center;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 .map {
-  width:300px;
-  height:300px;
-  border:0;
-  border-radius:12px;
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
 }
 
 /* Footer */
 footer {
-  padding:30px;
-  text-align:center;
-  background:#000;
-  color:#fff;
-  opacity:0.8;
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  opacity: 0.85;
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Camspine Record</h1>
-  <p>Premium Music Production & AI Sound Design</p>
-  <a href="tel:+85512345678" class="btn">📞 Call Now</a>
-  <a href="https://t.me/yourusername" class="btn btn-telegram">💬 Telegram</a>
+  <h1>Your Restaurant</h1>
+  <p>Delicious Dining Experience in Phnom Penh</p>
+  <a href="tel:+85512345678" class="btn call">📞 Call Now</a>
+  <a href="https://t.me/yourusername" class="btn telegram">💬 Telegram</a>
 </header>
 
 <section>
-  <h2>Signature Music</h2>
+  <h2>Our Menu</h2>
   <div class="menu">
     <div class="card">
-      <img src="images/cover1.jpg" alt="Track">
-      <h3>Track 1</h3>
-      <p>Lo-fi Chill</p>
+      <img src="images/steak.jpg" alt="Steak">
+      <h3>Grilled Steak</h3>
+      <p>$12.99</p>
     </div>
     <div class="card">
-      <img src="images/cover2.jpg" alt="Track">
-      <h3>Track 2</h3>
-      <p>Ambient Piano</p>
+      <img src="images/pasta.jpg" alt="Pasta">
+      <h3>Seafood Pasta</h3>
+      <p>$9.99</p>
+    </div>
+    <div class="card">
+      <img src="images/coffee.jpg" alt="Coffee">
+      <h3>Signature Coffee</h3>
+      <p>$3.50</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>Visit & Contact</h2>
+  <h2>Visit Us</h2>
   <p>Street 123, Phnom Penh</p>
-  <p>Open Daily: 8AM - 10PM</p>
 
   <div class="map-telegram">
-    <!-- Google Map -->
     <iframe 
-      src="https://www.google.com/maps/embed?..." 
+      src="https://www.google.com/maps/embed?..."
       class="map"
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
+      loading="lazy"></iframe>
 
-    <!-- Telegram Button -->
-    <a href="https://t.me/yourusername" class="btn btn-telegram">💬 Telegram</a>
+    <a href="https://t.me/yourusername" class="btn telegram">💬 Telegram</a>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Camspine Record | All Rights Reserved</p>
-</footer>
-
-<script>
-// 滑動動畫
-window.addEventListener("scroll", function() {
-  document.querySelectorAll("section").forEach(function(sec) {
-    var top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.classList.add("show");
-    }
-  });
-});
-</script>
-
+<footer>© 2026 Your Restaurant | All Rights Reserved</footer>
 </body>
 </html>
